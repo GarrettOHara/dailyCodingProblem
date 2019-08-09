@@ -1,0 +1,26 @@
+import java.util.*;
+public class dailyCode15
+{
+	private static Random rand = new Random();
+	private static ArrayList<Integer> stream = new ArrayList<Integer>();
+	public static void main(String[] args)
+	{
+		createStream();
+		stream.get(rand.nextInt(stream.size()));
+	}
+	public static void createStream()
+	{
+		stream.add(rand.nextInt(1000));
+		createStream();
+	}
+	/**
+	 * This problem was asked by Facebook.
+
+Given a stream of elements too large to store in memory, pick a random 
+element from the stream with uniform probability.
+
+Note: this program does not compile due to the unending recursive method: createStream
+createStream adds random numbers between 0 and 999 to an array list and does not end
+however uniform probability is demonstrated  at line 10.
+	 */
+}
