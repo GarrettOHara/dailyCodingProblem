@@ -1,0 +1,30 @@
+package dailyCoding;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.Scanner;
+public class dailyCoding10
+{
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("How many milliseconds until the method is called?");
+		int n = scan.nextInt();
+		action(n);
+	}
+	public static void action(int n)
+	{
+		new Timer().scheduleAtFixedRate(new TimerTask() {
+			public void run()
+			{
+				System.out.println("This message was printed after "
+						+ n + " milliseconds");
+			}	
+				}, n, 1000000000);
+	}
+	/**
+This problem was asked by Apple.
+
+Implement a job scheduler which takes in a function f and an 
+integer n, and calls f after n milliseconds.
+	 */
+}
