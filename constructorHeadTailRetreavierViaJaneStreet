@@ -1,0 +1,50 @@
+import java.util.Random;
+public class dailyCode5
+{
+	public static void main(String[]args)
+	{
+		Random rand = new Random();
+		int a = rand.nextInt(10);
+		int b = rand.nextInt(10);
+		cons(a, b);
+		car(a, b);
+		cdr(a, b);
+	}
+	public static int[] cons(int a, int b)
+	{
+		int[] list = new int[2];
+		list[0] = a;
+		list[1] = b;
+		System.out.println("cons has constructed " + list[0]
+				+ ", "+ list[1]);
+		return list;
+	}
+	public static int car(int a, int b)
+	{
+		int find = a;
+		System.out.println("car returns: " + a);
+		return find;
+	}
+	public static int cdr(int a, int b)
+	{
+		int find = b;
+		System.out.println("cdr returns: " + b);
+		return find;
+	}
+	/*
+This problem was asked by Jane Street.
+
+cons(a, b) constructs a pair, and car(pair) and cdr(pair) returns 
+the first and last element of that pair. For example, car(cons(3, 4)) 
+returns 3, and cdr(cons(3, 4)) returns 4.
+
+Given this implementation of cons:
+
+def cons(a, b):
+    def pair(f):
+        return f(a, b)
+    return pair
+    
+Implement car and cdr.
+	 */
+}
