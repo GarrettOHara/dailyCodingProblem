@@ -1,0 +1,52 @@
+package dailyCoding;
+import java.util.*;
+
+public class dailyCode1
+{
+	public static void main (String [] args)
+	{
+		Random rand = new Random();
+		int [] list = new int [4];
+		
+		for(int i = 0; i < list.length; i++)
+		{
+			list[i] = rand.nextInt(10);
+			System.out.print(list[i] + " ");
+		}
+		System.out.println();
+		
+		int k = rand.nextInt(10);
+		System.out.println("K is equal to " + k);
+		
+		boolean equalToK = false;
+		label:
+		for (int i = 0; i < list.length - 1; i++)
+		{
+			int numberAddi = list[i];
+			for (int j = 0; j < list.length; j++)
+			{
+				if(i == j)
+					continue;
+				int numberAddj = list[j];
+				if (k == numberAddi + numberAddj)
+				{
+					equalToK = true;
+					System.out.println(numberAddi + " + " + list[j] +  " = " + k);
+					break label;
+				}
+				if (equalToK == true)
+					break label;
+			}
+		}
+		if (equalToK == false)
+			System.out.println("There are no numbers in the list that add to K");
+	}
+	/**
+	 * This problem was recently asked by Google.
+
+Given a list of numbers and a number k, return whether any two numbers from the 
+list add up to k.
+
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+	 */
+}
